@@ -15,9 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('nombre', length: 100);
             $table->string('contacto', length: 10);
-            $table->string('correo', length: 100);
             $table->char('tipo', length: 1)->default('M'); // M (Moral) / F (Física)
-            $table->string('datos_fiscales', length: 250);
+            $table->string('rfc', length: 20);
+            $table->string('regimen_fiscal', length: 100);
+            $table->string('cfdi', length: 100);
+            $table->integer('codigo_postal');
+            $table->string('correo', length: 100);
             $table->timestamps();
             $table->dateTime('deleted_at');
         });
