@@ -19,6 +19,7 @@ return new class extends Migration
             $table->dateTime('fecha_alta_contrato');
             $table->unsignedBigInteger('cliente_id');
             $table->timestamps();
+            $table->dateTime('deleted_at');
 
             $table->foreign('cliente_id')->references('id')->on('cliente');
         });

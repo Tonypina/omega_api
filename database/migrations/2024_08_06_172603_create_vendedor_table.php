@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('contacto', length: 10);
             $table->string('correo', length: 100);
             $table->timestamps();
+            $table->dateTime('deleted_at');
         });
     }
 

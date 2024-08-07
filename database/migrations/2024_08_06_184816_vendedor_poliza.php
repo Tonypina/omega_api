@@ -17,6 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('vendedor_id');
             $table->unsignedBigInteger('poliza_id');
             $table->timestamps();
+            $table->dateTime('deleted_at');
 
             $table->foreign('vendedor_id')->references('id')->on('vendedor');
             $table->foreign('poliza_id')->references('id')->on('poliza');

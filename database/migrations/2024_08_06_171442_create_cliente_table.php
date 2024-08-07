@@ -19,6 +19,7 @@ return new class extends Migration
             $table->char('tipo', length: 1)->default('M'); // M (Moral) / F (Física)
             $table->string('datos_fiscales', length: 250);
             $table->timestamps();
+            $table->dateTime('deleted_at');
         });
     }
 

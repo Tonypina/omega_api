@@ -20,6 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('catalogo_tipo_equipo_id');
             $table->unsignedBigInteger('sucursal_id');
             $table->timestamps();
+            $table->dateTime('deleted_at');
 
             $table->foreign('catalogo_tipo_equipo_id')->references('id')->on('catalogo_tipo_equipo');
             $table->foreign('sucursal_id')->references('id')->on('sucursal');

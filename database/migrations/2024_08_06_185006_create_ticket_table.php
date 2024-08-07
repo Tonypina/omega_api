@@ -28,6 +28,7 @@ return new class extends Migration
             $table->unsignedBigInteger('ticket_padre_id')->nullable()->default(null);
             $table->unsignedBigInteger('tecnico_id');
             $table->timestamps();
+            $table->dateTime('deleted_at');
 
             $table->foreign('status_id')->references('id')->on('catalogo_status');
             $table->foreign('equipo_id')->references('id')->on('equipo');

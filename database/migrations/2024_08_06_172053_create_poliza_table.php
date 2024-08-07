@@ -20,6 +20,7 @@ return new class extends Migration
             $table->decimal('costo', places: 2);
             $table->unsignedBigInteger('sucursal_id');
             $table->timestamps();
+            $table->dateTime('deleted_at');
 
             $table->foreign('sucursal_id')->references('id')->on('sucursal');
         });
