@@ -18,7 +18,10 @@ class Cliente extends Model
        'nombre', 
        'contacto', 
        'tipo', 
-       'datos_fiscales', 
+       'rfc', 
+       'regimen_fiscal', 
+       'cfdi', 
+       'codigo_postal', 
        'correo', 
     ];
 
