@@ -36,24 +36,4 @@ class Cliente extends Model
     {
         return $this->hasMany(Sucursal::class, 'cliente_id', 'id');
     }
-    
-    /**
-     * Get all of the polizas for the Cliente
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function polizas(): HasMany
-    {
-        return $this->hasMany(Poliza::class, 'cliente_id', 'id');
-    }
-
-    /**
-     * Get all of the equipos for the Cliente
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function equipos(): HasMany
-    {
-        return $this->hasMany(Equipo::class, 'cliente_id', 'id');
-    }
 }
