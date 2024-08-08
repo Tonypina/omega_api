@@ -10,7 +10,7 @@ trait SucursalValidationRules
             'direccion' => ['required', 'string', 'max:100'],
             'correo' => ['required', 'email'],
             'contacto' => ['required', 'string', 'max:10'],
-            'fecha_alta_contrato' => ['required', 'date_format:Y-m-d'],
+            'fecha_alta_contrato' => ['required', 'date_format:Y-m-d H:i:s'],
         ];
     }
     
@@ -20,7 +20,7 @@ trait SucursalValidationRules
             'direccion' => ['string', 'max:100'],
             'correo' => ['email'],
             'contacto' => ['string', 'max:10'],
-            'fecha_alta_contrato' => ['date_format:Y-m-d'],
+            'fecha_alta_contrato' => ['date_format:Y-m-d H:i:s'],
         ];
     }
 }

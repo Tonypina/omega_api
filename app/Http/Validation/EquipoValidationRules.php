@@ -11,6 +11,7 @@ trait EquipoValidationRules
             'marca' => ['required', 'string', 'max:50'],
             'modelo' => ['required', 'string', 'max:50'],
             'costo_de_poliza' => ['required', 'decimal:2'],
+            'sucursal_id' => ['required'],
         ];
     }
 
