@@ -14,15 +14,15 @@ return new class extends Migration
         Schema::create('ticket', function (Blueprint $table) {
             $table->id();
             $table->string('folio', length: 50);
-            $table->decimal('monto_ticket', places: 2);
-            $table->decimal('monto_servicio', places: 2);
+            $table->decimal('monto_ticket', places: 2)->nullable()->default(null);
+            $table->decimal('monto_servicio', places: 2)->nullable()->default(null);
             $table->dateTime('fecha_asignacion');
-            $table->dateTime('fecha_inicio');
-            $table->dateTime('fecha_check_in');
-            $table->dateTime('fecha_fin');
-            $table->string('comentario', length: 250);
-            $table->char('criticidad', length: 1);
-            $table->string('orden_servicio', length: 500);
+            $table->dateTime('fecha_inicio')->nullable()->default(null);
+            $table->dateTime('fecha_check_in')->nullable()->default(null);
+            $table->dateTime('fecha_fin')->nullable()->default(null);
+            $table->string('comentario', length: 250)->nullable()->default(null);
+            $table->char('criticidad', length: 1)->nullable()->default(null);
+            $table->string('orden_servicio', length: 1000)->nullable()->default(null);
             $table->unsignedBigInteger('status_id');
             $table->unsignedBigInteger('equipo_id');
             $table->unsignedBigInteger('ticket_padre_id')->nullable()->default(null);
