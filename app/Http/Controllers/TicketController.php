@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\TicketResource;
+use App\Models\Ticket;
 use Illuminate\Http\Request;
 
 class TicketController
@@ -11,15 +13,7 @@ class TicketController
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        return TicketResource::collection(Ticket::all()->withTrashed(false));
     }
 
     /**

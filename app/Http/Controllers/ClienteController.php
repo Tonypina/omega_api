@@ -7,6 +7,7 @@ use App\Models\Sucursal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\SucursalController;
+use App\Http\Resources\ClienteResource;
 use App\Http\Validation\ClienteValidationRules;
 
 class ClienteController extends Controller
@@ -18,7 +19,7 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        return Cliente::all()->withTrashed(false);
+        return ClienteResource::collection(Cliente::all()->withTrashed(false));
     }
 
     /**
@@ -57,7 +58,7 @@ class ClienteController extends Controller
      */
     public function show(string $id)
     {
-        return Cliente::find($id);
+        return new ClienteResource(Cliente::find($id));
     }
 
     /**

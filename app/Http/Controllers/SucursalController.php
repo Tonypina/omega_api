@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\SucursalResource;
 use App\Models\Cliente;
 use App\Models\Sucursal;
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ class SucursalController
      */
     public function index()
     {
-        return Sucursal::all()->withTrashed(false);
+        return SucursalResource::collection(Sucursal::all()->withTrashed(false));
     }
 
     /**
@@ -64,7 +65,7 @@ class SucursalController
      */
     public function show(string $id)
     {
-        return Sucursal::find($id);
+        return new SucursalResource(Sucursal::find($id));
     }
 
     /**
