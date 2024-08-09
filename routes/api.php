@@ -14,6 +14,9 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CatalogoStatusController;
 use App\Http\Controllers\CatalogoTipoEquipoController;
 
+Route::post('login', [AuthController::class, 'login']);
+Route::post('register', [AuthController::class, 'register']);
+
 Route::middleware(['auth:api'])->group(function () {
 
     /**
